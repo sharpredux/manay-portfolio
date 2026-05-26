@@ -26,5 +26,5 @@ CREATE TABLE IF NOT EXISTS contact (
 
 -- Seed Contact table if empty
 INSERT INTO contact (id, email, address, city)
-VALUES (1, 'inquiries@elara-vance.com', '128 Modernist Way, Suite 400', 'Los Angeles, CA 90012')
+VALUES (1, 'milamanay@gmail.com', '128 Modernist Way, Suite 400', 'Los Angeles, CA 90012')
 ON CONFLICT (id) DO NOTHING;

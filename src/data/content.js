@@ -76,7 +76,7 @@ const DEFAULTS = {
   ],
 
   contact: {
-    email: "inquiries@elara-vance.com",
+    email: "milamanay@gmail.com",
     address: "128 Modernist Way, Suite 400",
     city: "Los Angeles, CA 90012",
   },

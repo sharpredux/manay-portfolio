@@ -11,6 +11,8 @@
                 rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
                 rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
         <script id="tailwind-config">
                 tailwind.config = {
                         darkMode: "class",
@@ -316,7 +318,7 @@
                                 <div
                                         class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10">
                                 </div>
-                                <img alt="Elara Vance Portrait" class="w-full h-full object-cover object-left"
+                                <img alt="Elara Vance Portrait" class="w-full h-full object-cover object-left" data-gsap="slab-img"
                                         src="https://lh3.googleusercontent.com/aida/ADBb0uix7HmRokYWE6Re2D92B4V5IhU8ty0tRiefbUsDK51mJ3i2JDFYUCwMHpOk_gQOuLu2q-d7l-detsCwt_DOJdFDi-0rqyC59kvlu3V9bym6Umu61lb6UPsbacxMXx4a032ownJlaoDQkvSUU11kru1avOIBnXuiPL6kar0gsZoP-PQT62rJqNueNgnL30yHZUaBsoz_fIHEcuLREvuHYmuxdhAXySfM8Tt8bxm_wjAufYo5gBFvMMfq4T8" />
                         </div>
                 </div>
@@ -324,10 +326,10 @@
                         class="w-full max-w-container-max mx-auto px-margin-md md:px-margin-desktop relative z-10 grid grid-cols-1 md:grid-cols-2 gap-gutter items-center flex-grow flex">
                         <!-- Hero Text -->
                         <div class="text-left relative z-20 ml-margin-md">
-                                <h1
+                                <h1 data-gsap="slab-text"
                                         class="font-display-lg text-display-lg-mobile md:text-display-lg !font-extrabold text-on-background mb-8 uppercase leading-tight md:leading-none tracking-tight">
                                         Mila<br />MANAY</h1>
-                                <p
+                                <p data-gsap="slab-text"
                                         class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-[0.2em] mt-12 opacity-80">
                                         Principal Architect</p>
                         </div>
@@ -339,7 +341,7 @@
                 id="experience">
                 <div
                         class="w-full max-w-container-max mx-auto px-margin-md md:px-margin-desktop flex-grow flex flex-col justify-center">
-                        <h2
+                        <h2 data-gsap="slab-text"
                                 class="font-headline-md text-headline-md text-on-background uppercase tracking-wider mb-16 m-0">
                                 PROFESSIONAL EXPERIENCE</h2>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-12" id="experience-grid">
@@ -364,15 +366,15 @@
                                                         <div id="project-year-dropdown" class="absolute left-0 mt-0 w-full origin-top-left bg-[#131313] border-x border-b border-white/20 hidden z-50 flex flex-col shadow-2xl">
                                                         </div>
                                                 </div>
-                                                <h2
+                                                <h2 data-gsap="slab-text"
                                                         class="font-headline-md text-headline-md text-on-background uppercase tracking-wider m-0">
                                                         PROJECTS</h2>
                                         </div>
                                         <div id="active-project-info">
-                                                <h3 id="project-title"
+                                                <h3 data-gsap="slab-text" id="project-title"
                                                         class="font-display-lg-mobile text-on-background uppercase mb-4 leading-none">
                                                         The Apex Pavilion</h3>
-                                                <p id="project-desc"
+                                                <p data-gsap="slab-text" id="project-desc"
                                                         class="font-body-sm text-on-surface-variant mb-12 max-w-xs">
                                                         Project photos and interviews focus heavily on negative space
                                                         and architectural void.
@@ -400,16 +402,16 @@
         <!-- Section 3: Contact -->
         <section class="snap-section min-h-screen flex flex-col justify-between pt-28" id="contact">
                 <div class="w-full max-w-container-max mx-auto px-margin-md md:px-margin-desktop text-center my-auto">
-                        <h2
+                        <h2 data-gsap="slab-text"
                                 class="font-display-lg-mobile md:text-display-lg text-on-background mb-8 uppercase tracking-tight">
                                 Let's Build</h2>
-                        <a id="contact-email-link" class="inline-block font-label-caps text-label-caps tracking-[0.2em] px-8 py-4 border border-white/20 text-on-background hover:bg-white/5 hover:border-white/40 transition-all duration-300 mb-16"
+                        <a id="contact-email-link" data-gsap="slab-text" class="inline-block font-label-caps text-label-caps tracking-[0.2em] px-8 py-4 border border-white/20 text-on-background hover:bg-white/5 hover:border-white/40 transition-all duration-300 mb-16"
                                 href="mailto:milamanay@gmail.com">
                                 <span id="contact-email-display">MILAMANAY@GMAIL.COM</span>
                         </a>
                         <div class="font-body-lg text-on-surface-variant">
-                                <p id="contact-address">128 Modernist Way, Suite 400</p>
-                                <p id="contact-city">Los Angeles, CA 90012</p>
+                                <p data-gsap="slab-text" id="contact-address">128 Modernist Way, Suite 400</p>
+                                <p data-gsap="slab-text" id="contact-city">Los Angeles, CA 90012</p>
                         </div>
                 </div>
                 <footer
@@ -439,10 +441,10 @@
                 const expGrid = document.getElementById('experience-grid');
                 expGrid.innerHTML = content.experience.map(exp => `
                   <div class="border-t border-white/10 pt-6 flex flex-col">
-                    <span class="font-label-caps text-on-surface-variant uppercase tracking-[0.2em] mb-4">${exp.period}</span>
-                    <h3 class="font-display-lg-mobile text-on-background uppercase m-0 leading-none text-[24px] mb-2">${exp.title}</h3>
-                    <h4 class="font-label-caps text-primary uppercase tracking-[0.1em] mb-6">${exp.company}</h4>
-                    <p class="font-body-sm text-on-surface-variant">${exp.description}</p>
+                    <span data-gsap="slab-text" class="font-label-caps text-on-surface-variant uppercase tracking-[0.2em] mb-4">${exp.period}</span>
+                    <h3 data-gsap="slab-text" class="font-display-lg-mobile text-on-background uppercase m-0 leading-none text-[24px] mb-2">${exp.title}</h3>
+                    <h4 data-gsap="slab-text" class="font-label-caps text-primary uppercase tracking-[0.1em] mb-6">${exp.company}</h4>
+                    <p data-gsap="slab-text" class="font-body-sm text-on-surface-variant">${exp.description}</p>
                   </div>
                 `).join('');
 
@@ -590,6 +592,48 @@
                         }, { threshold: 0.1 });
                         observer.observe(heroSection);
                 }
+
+                // ── GSAP Reveal Animations ────────────────────────────────────
+                gsap.registerPlugin(ScrollTrigger);
+
+                // 1. Monolithic Slab Text Reveal
+                const textElements = document.querySelectorAll('[data-gsap="slab-text"]');
+                textElements.forEach(el => {
+                        gsap.fromTo(el, 
+                                { y: 50, clipPath: 'inset(0 0 100% 0)' },
+                                { 
+                                        y: 0, 
+                                        clipPath: 'inset(0 0 0% 0)', 
+                                        duration: 1.4, 
+                                        ease: 'power4.out',
+                                        scrollTrigger: {
+                                                trigger: el,
+                                                start: "top 90%",
+                                                toggleActions: "play none none reverse"
+                                        }
+                                }
+                        );
+                });
+
+                // 2. Monolithic Slab Image Reveal (Expanding Slit)
+                const imgElements = document.querySelectorAll('[data-gsap="slab-img"]');
+                imgElements.forEach(img => {
+                        gsap.fromTo(img,
+                                { clipPath: 'inset(50% 0 50% 0)', scale: 1.1, filter: 'brightness(0)' },
+                                {
+                                        clipPath: 'inset(0% 0 0% 0)',
+                                        scale: 1,
+                                        filter: 'brightness(1)',
+                                        duration: 1.6,
+                                        ease: 'expo.out',
+                                        scrollTrigger: {
+                                                trigger: img,
+                                                start: "top 85%",
+                                                toggleActions: "play none none reverse"
+                                        }
+                                }
+                        );
+                });
         </script>
 
         <!-- ── Dot Indicator Logic ── -->
